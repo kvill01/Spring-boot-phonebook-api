@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 // Repository pour les opérations CRUD sur Contact
 @Repository
-public interface ContactRepository extends JpaRepository<Contact, Long> {
-
+public interface ContactRepository extends JpaRepository<Contact, Long>
+{
+    boolean existsByPhoneNumber(String phoneNumber);
 }
