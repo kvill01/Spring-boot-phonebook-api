@@ -23,12 +23,6 @@ public class ContactController {
         this.repo = repo;
     }
 
-    // GET /api/contacts - Récupérer tous les contacts
-    @GetMapping
-    public List<Contact> getAllContacts() {
-        return repo.findAll();
-    }
-
     // POST /api/contacts - Créer un nouveau contact
     @PostMapping
     public ResponseEntity<Contact> createContact(@Valid @RequestBody Contact contact) {
@@ -36,12 +30,40 @@ public class ContactController {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedContact);
     }
 
+    // GET /api/contacts - Récupérer tous les contacts
+    @GetMapping
+    public List<Contact> getAllContacts() {
+        return repo.findAll();
+    }
+
+
     // GET /api/contacts/{id} - Récupérer un contact par ID
     @GetMapping("/{id}")
     public ResponseEntity<Contact> getContact(@PathVariable Long id) {
         Optional<Contact> existingContact = repo.findById(id);
         // Retourner Contact
         return existingContact.map(ResponseEntity::ok).orElseThrow(() ->  new ContactNotFoundException("Contact not found"));
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Contact>> searchByFirstName(@RequestParam String firstName) {
+        List<Contact> results = repo.findByFirstNameContainingIgnoreCase(firstName);
+
+        if (results.isEmpty()) {
+            throw new ContactNotFoundException("No contact found with : " + firstName);
+        }
+
+        return ResponseEntity.ok(results);
+    }
+
+    @GetMapping("/searchName")
+    public ResponseEntity<List<Contact>> searchByLastName (@RequestParam String lastName) {
+        List<Contact> results = repo.findByLastNameContainingIgnoreCase(lastName);
+        if (!results.isEmpty()){
+            return ResponseEntity.ok(results);
+        }
+
+        throw new ContactNotFoundException("No contact found with : " + lastName);
     }
 
     // PUT /api/contacts/{id} - Mettre à jour un contact
