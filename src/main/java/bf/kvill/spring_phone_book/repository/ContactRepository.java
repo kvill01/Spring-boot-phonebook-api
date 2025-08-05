@@ -10,11 +10,13 @@ import java.util.List;
 @Repository
 public interface ContactRepository extends JpaRepository<Contact, Long>
 {
-    boolean existsByPhoneNumber(String phoneNumber);
+    //Recherche par numero de telephone
+    List<Contact> findContainingByPhoneNumber(String phoneNumber);
 
     // Recherche par prénom, sans tenir compte de la casse
     List<Contact> findByFirstNameContainingIgnoreCase(String firstName);
 
+    // Recherche par nom, sans tenir compte de la casse
     List<Contact> findByLastNameContainingIgnoreCase(String lastName);
 
 }

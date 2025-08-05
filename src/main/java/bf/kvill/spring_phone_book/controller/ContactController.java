@@ -45,6 +45,17 @@ public class ContactController {
         return existingContact.map(ResponseEntity::ok).orElseThrow(() ->  new ContactNotFoundException("Contact not found"));
     }
 
+    @GetMapping("/searchPhone")
+    public ResponseEntity<List<Contact>> searchByphoneNumber(@RequestParam String phoneNumber) {
+        List<Contact> results = repo.findContainingByPhoneNumber(phoneNumber);
+
+        if (results.isEmpty()) {
+            throw new ContactNotFoundException("No contact found with : " + phoneNumber);
+        }
+
+        return ResponseEntity.ok(results);
+    }
+
     @GetMapping("/search")
     public ResponseEntity<List<Contact>> searchByFirstName(@RequestParam String firstName) {
         List<Contact> results = repo.findByFirstNameContainingIgnoreCase(firstName);
@@ -59,6 +70,7 @@ public class ContactController {
     @GetMapping("/searchName")
     public ResponseEntity<List<Contact>> searchByLastName (@RequestParam String lastName) {
         List<Contact> results = repo.findByLastNameContainingIgnoreCase(lastName);
+
         if (!results.isEmpty()){
             return ResponseEntity.ok(results);
         }
