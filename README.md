@@ -114,7 +114,7 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 ## 👨‍💻 Auteur
 
-**kvill** - [GitHub](https://github.com/votre-username)
+**Sawadogo Abdel Kaled** - [GitHub](https://github.com/kvill01)
 
 ---
 
